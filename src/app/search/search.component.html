@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row ">
+
+    <div class="col-md-4 col-xs-4">
+      <div class="form-group">
+        <input type="text"  class="form-control" name="searchSong" [(ngModel)]="searchSong" />
+        <button class="btn btn-primary" (click)="onSearch()"> Search</button>
+      </div>
+      <div class="well">
+        <ul class="list-group" *ngFor="let song of songs; let i = index">
+          <li  class="list-group-item" id="song{{i}}" (click)="getImgSong(song.artwork_url, song.id)"><p>{{song.title}}</p></li>
+        </ul>
+        <br>
+        <button class="btn btn-primary" (click)="onNext()"> Next</button>
+      </div>
+    </div>
+  <div class="col-md-4 col-xs-4" >
+     <app-chosen-song [imgSong]="imgSong" [playIframe]='playIframe' [idSong]="idSong" *ngIf="imgSong !== ''"></app-chosen-song>
+  </div>
+    <div class="col-md-4 col-xs-4">
+   <app-search-list (chooseFromList)="onSearchList($event)" [songs]="songs"></app-search-list>
+    </div>
+
+  </div>
+</div>
+{{message}}

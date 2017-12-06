@@ -1,0 +1,16 @@
+<!-- <div class="well">
+  <ul class="list-group" *ngFor="let list of searchedList.reverse(); let i = index">
+    <div *ngIf="i < 5">
+    <li  class="list-group-item" (click)="onSearchList(list)">{{list}}</li>
+    </div>
+  </ul>
+  <br>
+</div> -->
+
+<div class="well">
+  <ul class="list-group" *ngFor="let list of listSearch.reverse() ; let i = index">
+    <div *ngIf="i < 5">
+    <li  class="list-group-item" (click)="onSearchList(list.name)">{{list.name}}</li>
+    </div>
+  </ul>
+</div>

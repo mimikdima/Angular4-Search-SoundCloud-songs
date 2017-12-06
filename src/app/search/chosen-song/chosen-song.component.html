@@ -1,0 +1,4 @@
+<img src="{{imgSong}}" name="" (click)="playSong()" class="img-thumbnail">
+<div *ngIf="playIframe">
+  <iframe id="iframe" height="100"  [src]="iframePlaySong | safe" allowfullscreen></iframe>
+</div>
